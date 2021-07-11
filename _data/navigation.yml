@@ -3,26 +3,13 @@ header:
     url:        /
     key:        wiki
   - title:      Github 
-    url:        https://github.com/purdue-arc/wiki
+    url:        https://github.com/PurdueLunabotics/wiki
 
 wiki:
   - title:      Getting Started 
     children:
       - title:  Quick Start 
         url:    /
-  - title:      Robot Arm Project 
-    children:
-      - title:  Start Here 
-        url:    /wiki/robot-arm/start-here
-      - title:  Software Docs
-        url:    /wiki/robot-arm/software
-  - title:      Tutorials 
-    children:
-      - title:  Setup ROS
-        url:    /wiki/tutorials/setup-ros # url for project articles is path/to/markdown/file in kebab-case
-      - title:  ROS Tutorial - Snake Game
-        url:    /wiki/tutorials/snake-tutorial
-
   - title:      Contributing 
     children:
       - title:  Quick Start 

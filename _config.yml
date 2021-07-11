@@ -20,9 +20,9 @@ text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", 
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : 
 baseurl : # does not include hostname
-title   : Purdue ARC Wiki
+title   : Purdue Lunabotics Wiki
 description: > # this means to ignore newlines until "Language & timezone"
-  Learn about the robotics projects that we build at Purdue ARC!
+  Learn about the lunar robot we're building for NASA's Lunabotics competition
 
 ## => Language and Timezone
 ##############################
@@ -34,14 +34,14 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : organization # "person" (default), "organization"
-  name      : Purdue ARC 
-  url       : www.purduearc.com
+  name      : Purdue Lunabotics 
+  url       : https://web.ics.purdue.edu/~lunabot
   avatar    : # path or url of avatar image (square)
-  bio       : The Autonomous Robotics Club of Purdue was created to grow the skills and abilities of its members through design projects centered around advanced autonomous robotics systems. It provides hands-on, real world experience to interdisciplinary teams using industry standard tools and practices. 
-  email     : autonomy@purdue.edu
-  twitter   : PurdueRobotClub # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
+  bio       : Each year we design, build, and code an autonomous mining robot from the ground up to compete in a NASA lunar-style mining compeition.
+  email     : purduelunaboticsteam@gmail.com
+  twitter   : PurdueLunabotic # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
   # linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
-  github    : purdue-arc # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+  github    : PurdueLunabotics # "user_name" the last part of your profile url, e.g. https://github.com/user_name
 
 
 ## => GitHub Repository (if the site is hosted by GitHub)
@@ -109,18 +109,15 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: "gitalk" # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Gitalk
   gitalk:
-    clientID    : "bd0f29091842158ea699" # GitHub Application Client ID
-    clientSecret: "6406f50dbe27c3da0c7eaa27f0f3d93c4ce70f5d" # GitHub Application Client Secret
-    repository  : "wiki" # GitHub repo
-    owner       : "purdue-arc" # GitHub repo owner
+    clientID    :
+    clientSecret: "" # GitHub Application Client Secret
+    repository  : "" # GitHub repo
+    owner       : "" # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      - "raghavauppuluri13"
-      - "hmccarty"
-      - "jrbaxter0"
 
 ## => Pageview
 ##############################
@@ -147,12 +144,12 @@ search:
 ## => Analytics
 ##############################
 analytics:
-  provider: "google" # false (default), "google", "custom"
+  provider: # false (default), "google", "custom"
 
   ## Google Analytics
   google:
-    tracking_id : "UA-199808191-1" # Google Analytics id for the site
-    anonymize_ip: false # Anonymize IP tracking for Analytics
+    tracking_id : "" # Google Analytics id for the site
+    anonymize_ip:  # Anonymize IP tracking for Analytics
 
 
 ## => Build
