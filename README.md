@@ -1,6 +1,6 @@
-# arc-wiki
-The wiki for the Autonomous Robotics Club's project teams.
+# purdue-lunabotics-wiki
+The wiki for Purdue Lunabotics.
 
 ## Contributing
 
-See the [quick-start](https://wiki.purduearc.com/wiki/contributing/quick-start) page
+Check out the quick start page [here](https://purduelunabotics.github.io/wiki/wiki/contributing/quick-start)
