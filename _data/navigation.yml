@@ -10,6 +10,12 @@ wiki:
     children:
       - title:  Quick Start 
         url:    /
+  - title:      Software 
+    children:
+      - title:  Start Here 
+        url:    /wiki/software/start-here
+      - title:  Documentation 
+        url:    /wiki/software/docs
   - title:      Contributing 
     children:
       - title:  Quick Start 
