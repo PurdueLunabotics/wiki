@@ -52,20 +52,20 @@ graph
   c2-->a2
 
   %% Links
-  click e1 href "http://127.0.0.1:4000/wiki/software/docs#plannerhuman" "Sensors"
-  click c4 href "http://127.0.0.1:4000/wiki/software/docs#communications" "Sensors"
+  click e1 href "http://wiki.purduelunabotics.org/wiki/software/docs#plannerhuman" "Sensors"
+  click c4 href "http://wiki.purduelunabotics.org/wiki/software/docs#communications" "Sensors"
 
-  click a1 href "http://127.0.0.1:4000/wiki/software/docs#sensor-drivers" "Sensors"
-  click a2 href "http://127.0.0.1:4000/wiki/software/docs#sensor-drivers" "Sensors"
-  click a3 href "http://127.0.0.1:4000/wiki/software/docs#sensor-drivers" "Sensors"
-  click a4 href "http://127.0.0.1:4000/wiki/software/docs#embedded-control" "Embedded Control"
+  click a1 href "http://wiki.purduelunabotics.org/wiki/software/docs#sensor-drivers" "Sensors"
+  click a2 href "http://wiki.purduelunabotics.org/wiki/software/docs#sensor-drivers" "Sensors"
+  click a3 href "http://wiki.purduelunabotics.org/wiki/software/docs#sensor-drivers" "Sensors"
+  click a4 href "http://wiki.purduelunabotics.org/wiki/software/docs#embedded-control" "Embedded Control"
 
-  click c1 href "http://127.0.0.1:4000/wiki/software/docs#navigation" "Sensors"
-  click c2 href "http://127.0.0.1:4000/wiki/software/docs#localization" "Sensors"
-  click c3 href "http://127.0.0.1:4000/wiki/software/docs#task-level-control" "Sensors"
+  click c1 href "http://wiki.purduelunabotics.org/wiki/software/docs#navigation" "Sensors"
+  click c2 href "http://wiki.purduelunabotics.org/wiki/software/docs#localization" "Sensors"
+  click c3 href "http://wiki.purduelunabotics.org/wiki/software/docs#task-level-control" "Sensors"
 
-  click d1 href "http://127.0.0.1:4000/wiki/software/docs#plannerhuman" "Sensors"
-  click d2 href "http://127.0.0.1:4000/wiki/software/docs#execution-controller" "Sensors"
+  click d1 href "http://wiki.purduelunabotics.org/wiki/software/docs#plannerhuman" "Sensors"
+  click d2 href "http://wiki.purduelunabotics.org/wiki/software/docs#execution-controller" "Sensors"
 
   %% Colors 
   classDef not_started fill:#ff8181
