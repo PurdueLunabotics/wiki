@@ -15,7 +15,7 @@ From this, you can then:
 
 1. Choose which subsection interests you most 
 2. Follow links in the specified subsection to get more contextual understanding (Optionally ask questions in the Discord, hop in a voice chat, etc for more fun convo about the area)
-3. Ensure you understand the prerequisites for each subsections with practical understanding/experience by completing a step-by-step tutorial using those prerecs (**Can be done concurrently with #2**)
+3. Ensure you understand the related topics for each subsections with practical understanding/experience by completing a step-by-step tutorial using those prerecs (**Can be done concurrently with #2**)
 4. At this point, you should have enough knowledge/experience in your subsection to contribute to the current approach and possibly even change what the current approach is if you find better ways to do things (if so, update these docs!) 
 
 ## Architecture Diagram 
@@ -102,18 +102,18 @@ To do this, it utilizes an [FSM](https://en.wikipedia.org/wiki/Finite-state_mach
 
 Also, if necessary, the human operator can also determine which actions to complete and can provide that information to the execution controller.
 
-**Prerequisites to implement**
-- [Python]()
-- [ROS]()
-- [FSMs]()
+**Related topics: to implement**
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
+- [FSM](http://wiki.purduelunabotics.org/wiki/software/docs#fsm)
 
 ### Execution Controller
 
 Regardless of who is sending the commands, there needs a controller that make a request to complete a certain task and then respond if the task was successful, allowing for the planner or manual controller to execute the next command. This is the job of the execution controller. Also, it can provide helpful logging information. 
 
-**Prerequisites to implement**
-- [Python]()
-- [ROS (Specifically ROS Service/Client)]()
+**Related topics: to implement**
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
 - Understanding of how the different mid-level nodes are implemented
 
 ## Mid level
@@ -128,17 +128,17 @@ Given a current location and target location, how do we move between current and
 
 It is feasible to use the A star path planning algorithm and populate obstacles using LiDAR + camera fusion. 
 
-**Prerequisites**
+**Related topics:**
 
 For pure navigation:
-- [A star algorithm]()
+- [A star algorithm](path-planning-algorithms)
 
 For obstacle detection:
-- [Python]()
-- [ROS]()
-- [LiDAR]()
-- [Camera]()
-- [Sensor fusion]()
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
+- [LiDAR](http://wiki.purduelunabotics.org/wiki/software/docs#lidar)
+- [Camera](http://wiki.purduelunabotics.org/wiki/software/docs#normal-camera)
+- [Sensor fusion](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion)
 
 ### Localization
 
@@ -158,13 +158,13 @@ Extrinsic localization is the robot's location from the collector bin, which is 
 
 This is currently planned to be done using [sensor fusion](https://www.sciencedirect.com/topics/engineering/sensor-fusion) between distance measurements from the BLE signals emitted by a BLE beacon between the robot and a tracker attached to the bin, and triangulated distance measurements of Apriltags. It could be possible to use LiDAR as well.
 
-**Prerequisites to implement**
+**Related topics: to implement**
 
-- [ROS]()
-- [Python]()
-- [Sensor fusion]()
-- [Using Apriltags]()
-- [T265 camera]()
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
+- [Kalman Filters](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion)
+- [Using Apriltags](http://wiki.purduelunabotics.org/wiki/software/docs#apritags)
+- [T265 camera](http://wiki.purduelunabotics.org/wiki/software/docs#t265)
 
 ### Communications
 
@@ -174,9 +174,9 @@ Therefore, having most of the compute and decision making done on the robot itse
 
 One tradeoff of limiting bandwidth usage and latency is less diagnostics and realtime feedback from the robot (meaning that we would need more confidence and testing to ensure system performance).
 
-**Prerequisites**
-- [Monitoring bandwith/latency usage from a router]()
-- [Understanding how ROS messages (manual control messages sent to the robot and diagnostic data sent back to team computer)]()
+**Related topics:**
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
+- [Communication/Networking](http://wiki.purduelunabotics.org/wiki/software/docs#communicationnetworking)
 
 ### Task-level Control 
 
@@ -184,33 +184,32 @@ In past competition, the goal of the lunar robot was to excavate gravel. From th
 
 Similar to excavation or deposition, any other new task closely follows a similar pattern. 
 
-**Prerequisites**
-- [Python]()
-- [ROS]()
-- [PID Controllers]()
+**Related topics:**
+- [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [PID Control](http://wiki.purduelunabotics.org/wiki/software/docs#pid-control)
 
 ## Low level
 
 ### Sensor Drivers 
 The camera, liDAR, BLE beacon all output raw data in bytes. This information needs to be processed and packaged up to make it easier for other components to use it.
 
-This is done mainly through using existing ROS packages such as [rplidar_ros](), [image_proc](), [cv_camera], etc 
+This is done mainly through using existing ROS packages that are linked below 
 
-**Prerequisites**
-- [Purchasing a BLE beacon]()
-- [Recieving/processing BLE data using ROS]()
-- [Processing LiDAR data using ROS]()
-- [Processing camera data and using ROS]()
-- [Processing t265 camera data and using ROS]()
+**Related topics:**
+- [BLE Beacons](http://wiki.purduelunabotics.org/wiki/software/docs#ble-beacons)
+- [Camera](http://wiki.purduelunabotics.org/wiki/software/docs#normal-camera)
+- [LiDAR](http://wiki.purduelunabotics.org/wiki/software/docs#lidar)
+- [T265](http://wiki.purduelunabotics.org/wiki/software/docs#t265)
 
 ### Embedded control 
 
 Each hardware-related system (i.e drivetrain, excavation, deposition) has a controller that ensures the execution of a given command using a simple control scheme with switches and encoders (i.e PD loop to ensure that the given set speed is reached by each wheel). 
 
-**Prerequisites**
-- [Arduino/C/C++]()
-- [ROS]()
-- [PID Controllers]()
+**Related topics:**
+- [Arduino](http://wiki.purduelunabotics.org/wiki/software/docs#arduino) and [C++](http://wiki.purduelunabotics.org/wiki/software/docs#c++)
+- [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
+- [PID Control](http://wiki.purduelunabotics.org/wiki/software/docs#pid-control)
 
 # Resources
 
@@ -236,41 +235,93 @@ Each hardware-related system (i.e drivetrain, excavation, deposition) has a cont
 - Very useful numeric libraries
   - [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page): Extremely efficient matrix math library
 
-### Python
-TODO
+### Python/Numpy
+
+**Python**
+
+- [Tutorial](https://www.youtube.com/watch?v=rfscVS0vtbw)
+- Important topics to understand: 
+  - Basics are good - variables + logic, functions, classes
+
+**Numpy** 
+> Must use when working with large arrays (i.e images)
+
+- [Tutorial](https://www.youtube.com/watch?v=8Y0qQEh7dJg) 
+- Important topics to understand: 
+  - Creating arrays
+  - slicing + indexing
+  - reshaping
+  - linear algebra
+
+**OpenCV**: 
+> Use for computer vision and image transformations like color detection, tracking, etc
+
+- [Tutorial](https://www.youtube.com/watch?v=oXlwWbU8l2o) 
+- Important topics to understand: 
+  - image transformation
+  - thresholding
+  - read/write images from file
+  - resizing
+  - tracking
 
 ### Arduino
-TODO
+- Top hit for "arduino tutorial" on google should work
 
 ### Good coding practices 
+- [Optimized C++ code](https://cpp-optimizations.netlify.app/)
+
 TODO
 
 ## Algorithms, Theory, Math 
+
 ### Sensor Fusion
-TODO
+Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so understanding those should be good.
 
-### Planning Algorithms 
-TODO
+- [tutorial walkthrough with code in python](https://datascopeanalytics.com/blog/sensor-fusion-tutorial/)
+- [solid conceptual understanding](https://www.kalmanfilter.net/default.aspx)
+- [explanation of a particle filter](https://www.youtube.com/watch?v=aUkBa1zMKv4)
 
-### FSMs 
-TODO
+### Path Planning Algorithms 
+
+- [A star pathfinding algorithm](https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2)
+- [navigation ros repo](http://wiki.ros.org/navigation)
+  - [ros package outputs velocity commands given a map and costmap](http://wiki.ros.org/base_local_planner?distro=noetic)
+
+### FSM 
+- [tutorial slideshow](https://www.clear.rice.edu/engi128/Handouts/Lec17-Robotics.pdf)
 
 ### Control Algorithms 
-TODO
 
-## Sensor related 
+#### PID Controller 
+- [tutorial](https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID)
 
-### Bluetooth Low Energy (BLE)
-- [Adding WiFi/BLE receiving to a Jetson](https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/)
+## Sensor-related 
+
+### BLE Beacon 
+> not complete, can google the following phrases as well
+
+- Purchasing a BLE beacon
+- [Adding WiFi/BLE receiving functionality to a Jetson](https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/)
+- Recieving/processing BLE data using ROS
 
 ### LiDAR
-- [RPLidar ROS Library]()
+- [RPLidar ROS Library](https://github.com/slamtec/rplidar_ros)
+  - Processes LiDAR data using ROS
 
 ### Camera
-- [Camera driver ROS package]()
-- [Camera calibration ROS package]()
+#### T265
+- [quick start instructions](https://github.com/IntelRealSense/realsense-ros#using-t265)
+  - Processes t265 camera data using ROS
+
+#### Normal Camera 
+- [Camera driver ROS package](http://wiki.ros.org/cv_camera)
+  - Processes camera data using ROS
+- [Camera calibration ROS package](http://wiki.ros.org/camera_calibration)
 
 ## Misc
 
-### Communication Networking 
-TODO
+### Communication/Networking 
+> not complete, can google the following phrases or ask on discord
+
+- Monitoring bandwith/latency usage from a router
+- Understanding how ROS messages (manual control messages sent to the robot and diagnostic data sent back to team computer)
