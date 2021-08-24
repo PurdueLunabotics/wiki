@@ -131,7 +131,7 @@ It is feasible to use the A star path planning algorithm and populate obstacles 
 **Related topics:**
 
 For pure navigation:
-- [A star algorithm](path-planning-algorithms)
+- [A star algorithm](http://wiki.purduelunabotics.org/wiki/software/docs#path-planning-algorithms)
 
 For obstacle detection:
 - [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
