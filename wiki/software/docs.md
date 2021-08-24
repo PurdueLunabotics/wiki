@@ -20,11 +20,13 @@ From this, you can then:
 
 ## Architecture Diagram 
 
+To help decipher the above diagram, lets use yourself as an analogy if you were trying to walk to the park. High-level would be general instructions such as . Mid-level would be your brain taking visual inputs and processing them 
+
 ```mermaid
 graph
   c4[Communications] --> d2
   e1[Human Operator] --> c4
-  subgraph Low Level
+  subgraph Low Level 
     direction LR
     a1[Realsense T265 Camera ROS driver]
     a2[Camera driver]
@@ -180,7 +182,7 @@ One tradeoff of limiting bandwidth usage and latency is less diagnostics and rea
 
 ### Task-level Control 
 
-In past competition, the goal of the lunar robot was to excavate gravel. From this, the tasks such as excavation of gravel and then deposition of the gravel into the bin would be converted to higher-level instructions that interact with the embedded controllers of each subsystem to follow through the execution of the task. 
+In past competition, the goal of the lunar robot was to excavate gravel. From this, there were two tasks: excavation of gravel and deposition of the gravel into the deposition bin. Wothat interact with the embedded controllers of each subsystem to follow through the execution of the task. 
 
 Similar to excavation or deposition, any other new task closely follows a similar pattern. 
 
@@ -235,7 +237,7 @@ Each hardware-related system (i.e drivetrain, excavation, deposition) has a cont
 - Very useful numeric libraries
   - [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page): Extremely efficient matrix math library
 
-### Python/Numpy
+### Python
 
 **Python**
 
@@ -292,7 +294,7 @@ Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so underst
 
 ### Control Algorithms 
 
-#### PID Controller 
+#### PID Control 
 - [tutorial](https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID)
 
 ## Sensor-related 
