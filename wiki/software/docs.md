@@ -20,7 +20,7 @@ From this, you can then:
 
 ## Architecture Diagram 
 
-To help decipher the above diagram, lets use yourself as an analogy if you were trying to walk to the park. High-level would be general instructions such as . Mid-level would be your brain taking visual inputs and processing them 
+To help decipher the below diagram, lets use yourself as an analogy if you were trying to walk to the park. High-level would be general instructions such as turn left, turn right. Mid-level would be your brain extracting relevant information from sensor inputs and taking smaller actions to ensure you're following the high-level instruction (dodging a biker). Low-level would be your brain sending signals to your muscles and getting signals from sensory organs.
 
 ```mermaid
 graph
