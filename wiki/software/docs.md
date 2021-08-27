@@ -215,7 +215,7 @@ Each hardware-related system (i.e drivetrain, excavation, deposition) has a cont
 
 # Resources
 
-**Competition Guidelines**: Not released yet 
+**Competition Guidelines**: [link](https://www.nasa.gov/content/lunabotics-information)
 
 ## Tools
 
