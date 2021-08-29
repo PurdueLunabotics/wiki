@@ -320,8 +320,8 @@ Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so underst
 
 Apriltags are fiducial markers, similar to QR codes, with the ability to determine a 3D pose (position + orientation) and ID of the tag with just a camera in various lighting and angles to the tag. This is used for localizing the robot with respect to the bin during competition. 
 
-- [Official website]()
-- [Apritag ROS package]()
+- [Official website](https://april.eecs.umich.edu/software/apriltag.html)
+- [Apriltag ROS package](https://github.com/AprilRobotics/apriltag_ros)
 
 #### T265
 - [quick start instructions](https://github.com/IntelRealSense/realsense-ros#using-t265)
