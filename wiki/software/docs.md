@@ -9,18 +9,18 @@ author: Raghava
 
 ## How to use this if you're new
 
-From the diagram and subsection descriptions, you can hopefully get a preliminary high-level understanding of each of the parts and how they fit together. 
+From the diagram and subarea descriptions, you can hopefully get a preliminary high-level understanding of each of the parts and how they fit together. 
 
 From this, you can then:
 
-1. Choose which subsection interests you most 
-2. Follow links in the specified subsection to get more contextual understanding (Optionally ask questions in the Discord, hop in a voice chat, etc for more fun convo about the area)
-3. Ensure you understand the related topics for each subsections with practical understanding/experience by completing a step-by-step tutorial using those prerecs (**Can be done concurrently with #2**)
-4. At this point, you should have enough knowledge/experience in your subsection to contribute to the current approach and possibly even change what the current approach is if you find better ways to do things (if so, update these docs!) 
+1. Choose which subarea interests you most 
+2. Follow links in the **Related Topics** section in the subarea description to get more contextual understanding (Optionally ask questions in the Discord, hop in a voice chat, etc for more fun convo about the area)
+3. Ensure you understand the **Related topics** for each subareas with practical understanding/experience by completing a step-by-step tutorial using those prerecs (**Can be done concurrently with #2**)
+4. At this point, you should have enough knowledge/experience in your subarea to contribute to the current approach and possibly even change what the current approach is if you find better ways to do things (if so, update these docs!) 
 
 ## Architecture Diagram 
 
-To help decipher the below diagram, lets use yourself as an analogy if you were trying to walk to the park. High-level would be general instructions such as turn left, turn right. Mid-level would be your brain extracting relevant information from sensor inputs and taking smaller actions to ensure you're following the high-level instruction (dodging a biker). Low-level would be your brain sending signals to your muscles and getting signals from sensory organs.
+> To help decipher the below diagram, lets use yourself as an analogy if you were trying to walk to the park. High-level would be general instructions such as turn left, turn right. Mid-level would be your brain extracting relevant information from sensor inputs and taking smaller actions to ensure you're following the high-level instruction (dodging a biker). Low-level would be your brain sending signals to your muscles and getting signals from sensory organs.
 
 ```mermaid
 graph
@@ -104,7 +104,7 @@ To do this, it utilizes an [FSM](https://en.wikipedia.org/wiki/Finite-state_mach
 
 Also, if necessary, the human operator can also determine which actions to complete and can provide that information to the execution controller.
 
-**Related topics: to implement**
+**Related topics:**
 - [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
 - [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
 - [FSM](http://wiki.purduelunabotics.org/wiki/software/docs#fsm)
@@ -113,7 +113,7 @@ Also, if necessary, the human operator can also determine which actions to compl
 
 Regardless of who is sending the commands, there needs a controller that make a request to complete a certain task and then respond if the task was successful, allowing for the planner or manual controller to execute the next command. This is the job of the execution controller. Also, it can provide helpful logging information. 
 
-**Related topics: to implement**
+**Related topics:**
 - [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
 - [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
 - Understanding of how the different mid-level nodes are implemented
@@ -146,7 +146,7 @@ For obstacle detection:
 
 **Problem**
 
-Where is the robot at any given time? Knowing this with high accuracy is really critical to other subsections such as navigation. But, a problem quickly emerges that each sensor that we use can output trashy data (i.e camera gets dust on it, wheels slip so encoders are off, liDAR can [behave weirdly](https://www.nasa.gov/sites/default/files/atoms/files/13_rmc2017_glossary_rev01_2c_10042016.pdf)). So, how do we use this?
+Where is the robot at any given time? Knowing this with high accuracy is really critical to other subareas such as navigation. But, a problem quickly emerges that each sensor that we use can output trashy data (i.e camera gets dust on it, wheels slip so encoders are off, liDAR can [behave weirdly](https://www.nasa.gov/sites/default/files/atoms/files/13_rmc2017_glossary_rev01_2c_10042016.pdf)). So, how do we use this?
 
 **Current Solution**
 
@@ -158,13 +158,15 @@ This is currently done with the Intel Realsense T265 localization camera. Using 
 
 Extrinsic localization is the robot's location from the collector bin, which is the ground truth to the rest of the robot's environment, since it we know the environment in reference to the bin with decent accuracy prior to the actual competition. 
 
-This is currently planned to be done using [sensor fusion](https://www.sciencedirect.com/topics/engineering/sensor-fusion) between distance measurements from the BLE signals emitted by a BLE beacon between the robot and a tracker attached to the bin, and triangulated distance measurements of Apriltags. It could be possible to use LiDAR as well.
+This is currently planned to be done using [sensor fusion](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion) between:
+- Pose measurements from the BLE signals emitted by a BLE beacon between the robot and a tracker attached to the bin
+- Pose measurements from Apriltags - a QR code-like marker that you can get the 3D position, orientation of from viewing it within a camera frame 
 
-**Related topics: to implement**
+**Related topics:**
 
 - [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
 - [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
-- [Kalman Filters](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion)
+- [Sensor fusion](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion)
 - [Using Apriltags](http://wiki.purduelunabotics.org/wiki/software/docs#apritags)
 - [T265 camera](http://wiki.purduelunabotics.org/wiki/software/docs#t265)
 
@@ -228,7 +230,7 @@ Each hardware-related system (i.e drivetrain, excavation, deposition) has a cont
 - [Learn Git under 10 min](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
 
 ### C++
-- [In depth tutorial playlist for C++](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) 
+- [In-depth tutorial playlist for C++](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) 
   - Recommended topics:
     - if/else, loops, functions, classes
     - Pointers/References
@@ -279,23 +281,24 @@ TODO
 ### Sensor Fusion
 Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so understanding those should be good.
 
-- [tutorial walkthrough with code in python](https://datascopeanalytics.com/blog/sensor-fusion-tutorial/)
-- [solid conceptual understanding](https://www.kalmanfilter.net/default.aspx)
-- [explanation of a particle filter](https://www.youtube.com/watch?v=aUkBa1zMKv4)
+- [Tutorial walkthrough with code for a practical understanding](https://datascopeanalytics.com/blog/sensor-fusion-tutorial/)
+- [Tutorial for a more conceptual understanding](https://www.kalmanfilter.net/default.aspx)
+- [Explanation of a particle filter](https://www.youtube.com/watch?v=aUkBa1zMKv4)
 
 ### Path Planning Algorithms 
 
 - [A star pathfinding algorithm](https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2)
-- [navigation ros repo](http://wiki.ros.org/navigation)
-  - [ros package outputs velocity commands given a map and costmap](http://wiki.ros.org/base_local_planner?distro=noetic)
+- [Navigation ROS repo](http://wiki.ros.org/navigation)
+  - [ROS package outputs velocity commands given a map and costmap](http://wiki.ros.org/base_local_planner?distro=noetic)
+
 
 ### FSM 
-- [tutorial slideshow](https://www.clear.rice.edu/engi128/Handouts/Lec17-Robotics.pdf)
+- [Tutorial](https://www.clear.rice.edu/engi128/Handouts/Lec17-Robotics.pdf)
 
 ### Control Algorithms 
 
 #### PID Control 
-- [tutorial](https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID)
+- [Tutorial](https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID)
 
 ## Sensor-related 
 
@@ -311,6 +314,14 @@ Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so underst
   - Processes LiDAR data using ROS
 
 ### Camera
+
+### Apriltags 
+
+Apriltags are fiducial markers, similar to QR codes, with the ability to determine a 3D pose (position + orientation) and ID of the tag with just a camera in various lighting and angles to the tag. This is used for localizing the robot with respect to the bin during competition. 
+
+- [Official website]()
+- [Apritag ROS package]()
+
 #### T265
 - [quick start instructions](https://github.com/IntelRealSense/realsense-ros#using-t265)
   - Processes t265 camera data using ROS
