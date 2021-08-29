@@ -167,7 +167,7 @@ This is currently planned to be done using [sensor fusion](http://wiki.purduelun
 - [ROS](http://wiki.purduelunabotics.org/wiki/software/docs#ros)
 - [Python](http://wiki.purduelunabotics.org/wiki/software/docs#python)
 - [Sensor fusion](http://wiki.purduelunabotics.org/wiki/software/docs#sensor-fusion)
-- [Using Apriltags](http://wiki.purduelunabotics.org/wiki/software/docs#apritags)
+- [Using Apriltags](http://wiki.purduelunabotics.org/wiki/software/docs#apriltags)
 - [T265 camera](http://wiki.purduelunabotics.org/wiki/software/docs#t265)
 
 ### Communications
@@ -308,6 +308,7 @@ Sensor fusion uses **Kalman Filters** (or a particle filter) heavily, so underst
 - Purchasing a BLE beacon
 - [Adding WiFi/BLE receiving functionality to a Jetson](https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/)
 - Recieving/processing BLE data using ROS
+- [example BLE beacon](https://www.aliexpress.com/item/1873972685.html?spm=a2g0o.search0304.0.0.2a4168c2YuTnLv&algo_pvid=e65e3b6b-de8d-4470-8375-a47989507449&algo_exp_id=e65e3b6b-de8d-4470-8375-a47989507449-2)
 
 ### LiDAR
 - [RPLidar ROS Library](https://github.com/slamtec/rplidar_ros)
