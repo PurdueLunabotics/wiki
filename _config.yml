@@ -109,14 +109,14 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: gitalk # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: "gitalk" # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Gitalk
   gitalk:
-    clientID    : 678ccd868e4bdc8e1843 
-    clientSecret: 8e9a809afbecaf12bdce3e5a6f03e71f3e10c1ae # GitHub Application Client Secret
-    repository  : wiki # GitHub repo
-    owner       : PurdueLunabotics # GitHub repo owner
+    clientID    : "678ccd868e4bdc8e1843"
+    clientSecret: "8e9a809afbecaf12bdce3e5a6f03e71f3e10c1ae" # GitHub Application Client Secret
+    repository  : "wiki" # GitHub repo
+    owner       : "PurdueLunabotics" # GitHub repo owner
     admin:
     - raghavauppuluri13
 
